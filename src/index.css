@@ -29,9 +29,12 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  justify-content: center; /* ✅ Horizontal centering */
+  align-items: center;      /* ✅ Vertical centering */
   min-width: 320px;
   min-height: 100vh;
+  padding: 1rem;            /* ✅ Spacing on small screens */
+  background-color: #242424;
 }
 
 h1 {
@@ -58,10 +61,6 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 /* Light mode preferences */
 @media (prefers-color-scheme: light) {
   :root {
@@ -81,7 +80,7 @@ button:focus-visible {
   @apply w-full border border-gray-300 rounded-lg p-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400;
 }
 
-/* Optional dark mode base (can customize more later) */
+/* Dark mode (optional enhancement) */
 @media (prefers-color-scheme: dark) {
   :root {
     color: #e0e0e0;
@@ -95,7 +94,7 @@ button:focus-visible {
   }
 }
 
-/* Basic print styles */
+/* Print-specific styles */
 @media print {
   body {
     background: white !important;
